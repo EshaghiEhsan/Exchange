@@ -7,10 +7,10 @@
  */
 
 import React from 'react';
+import { Login,Profile,Order,Market,Detail,Convert } from "./screens";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from '@react-navigation/native';
 import Tabs from "./navigation/tabs";
-import {Login} from "./screens";
 
 const Stack = createStackNavigator();
 const App= () => {
