@@ -7,7 +7,7 @@ import {
 } from "react-native";
 import { createBottomTabNavigator} from "@react-navigation/bottom-tabs"
 
-import { Home } from "../screens"
+import * as Screen from "../screens"
 import { COLORS, FONTS, icons } from "../constants"
 
 const Tab = createBottomTabNavigator()
@@ -25,13 +25,13 @@ const Tabs = () => {
                 elevation: 0,
                 backgroundColor:COLORS.white,
                 borderTopColor:'transparent',
-                height: 100
+                height: 80
             }
         }}>
 
             <Tab.Screen
                 name="Home"
-                component={Home}
+                component={Screen.Home}
                 options={{
                     tabBarIcon:({focused})=>(
                         <View style={{alignItems:"center",justifyContent:'center'}}>
@@ -53,14 +53,14 @@ const Tabs = () => {
             />
 
             <Tab.Screen
-                name="Portfolio"
-                component={Home}
+                name="market"
+                component={Screen.Market}
                 options={{
                     tabBarIcon:({focused})=>(
                         <View style={{alignItems:"center",justifyContent:'center'}}>
 
                             <Image
-                                source={icons.pie_chart}
+                                source={icons.market}
                                 resizeMode={'contain'}
                                 style={{
                                     width: 30,
@@ -68,28 +68,28 @@ const Tabs = () => {
                                     tintColor:focused?COLORS.primary : COLORS.black
                                 }}
                             />
-                            <Text style={{color:focused?COLORS.primary:COLORS.black,...FONTS.body5}}>PORTFOLIO</Text>
+                            <Text style={{color:focused?COLORS.primary:COLORS.black,...FONTS.body5}}>MARKET</Text>
 
                         </View>
                     )
                 }}
             />
             <Tab.Screen
-                name="Transaction"
-                component={Home}
+                name="order"
+                component={Screen.Order}
                 options={{
                     tabBarIcon:({focused})=>(
                         <View style={{alignItems:"center",justifyContent:'center'}}>
                             <Image
-                                source={icons.transaction}
+                                source={icons.order}
                                 resizeMode={'contain'}
                                 style={{
                                     width: 30,
                                     height:30,
-                                    tintColor:COLORS.white
+                                    tintColor:focused?COLORS.primary : COLORS.black
                                 }}
                             />
-                            <Text style={{color:focused?COLORS.primary:COLORS.black,...FONTS.body5}}>Transaction</Text>
+                            <Text style={{color:focused?COLORS.primary:COLORS.black,...FONTS.body5}}>ORDER</Text>
 
                         </View>
                     ),
@@ -98,8 +98,8 @@ const Tabs = () => {
 
             />
             <Tab.Screen
-                name="Prices"
-                component={Home}
+                name="Detail"
+                component={Screen.Detail}
                 options={{
                     tabBarIcon:({focused})=>(
                         <View style={{alignItems:"center",justifyContent:'center'}}>
@@ -113,21 +113,21 @@ const Tabs = () => {
                                     tintColor:focused?COLORS.primary : COLORS.black
                                 }}
                             />
-                            <Text style={{color:focused?COLORS.primary:COLORS.black,...FONTS.body5}}>PRICES</Text>
+                            <Text style={{color:focused?COLORS.primary:COLORS.black,...FONTS.body5}}>DETAIL</Text>
 
                         </View>
                     )
                 }}
             />
             <Tab.Screen
-                name="Settings"
-                component={Home}
+                name="Profile"
+                component={Screen.Profile}
                 options={{
                     tabBarIcon:({focused})=>(
                         <View style={{alignItems:"center",justifyContent:'center'}}>
 
                             <Image
-                                source={icons.settings}
+                                source={icons.profile}
                                 resizeMode={'contain'}
                                 style={{
                                     width: 30,
@@ -135,7 +135,7 @@ const Tabs = () => {
                                     tintColor:focused?COLORS.primary : COLORS.black
                                 }}
                             />
-                            <Text style={{color:focused?COLORS.primary:COLORS.black,...FONTS.body5}}>SETTINGS</Text>
+                            <Text style={{color:focused?COLORS.primary:COLORS.black,...FONTS.body5}}>PROFILE</Text>
 
                         </View>
                     )

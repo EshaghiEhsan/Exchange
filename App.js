@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import { Login,Profile,Order,Market,Detail,Convert } from "./screens";
+import * as Screen from "./screens";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from '@react-navigation/native';
 import Tabs from "./navigation/tabs";
@@ -29,27 +29,27 @@ const App= () => {
           />
           <Stack.Screen
               name="Detail"
-              component={Detail}
+              component={Screen.Detail}
           />
           <Stack.Screen
               name="Login"
-              component={Login}
+              component={Screen.Login}
           />
           <Stack.Screen
               name="Market"
-              component={Market}
+              component={Screen.Market}
           />
           <Stack.Screen
               name="Convert"
-              component={Convert}
+              component={Screen.Convert}
           />
           <Stack.Screen
               name="Profile"
-              component={Profile}
+              component={Screen.Profile}
           />
           <Stack.Screen
               name="Order"
-              component={Order}
+              component={Screen.Order}
           />
 
         </Stack.Navigator>
