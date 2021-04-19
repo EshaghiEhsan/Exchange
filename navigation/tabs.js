@@ -74,6 +74,33 @@ const Tabs = () => {
                     )
                 }}
             />
+
+
+            <Tab.Screen
+                name="Convert"
+                component={Screen.Convert}
+                options={{
+                    tabBarIcon:({focused})=>(
+                        <View style={{alignItems:"center",justifyContent:'center'}}>
+
+                            <Image
+                                source={icons.right_arrow}
+                                resizeMode={'contain'}
+                                style={{
+                                    width: 30,
+                                    height:30,
+                                    tintColor:focused?COLORS.primary : COLORS.black
+                                }}
+                            />
+                            <Text style={{color:focused?COLORS.primary:COLORS.black,...FONTS.body5}}>Convert</Text>
+
+                        </View>
+                    )
+                }}
+            />
+
+
+
             <Tab.Screen
                 name="order"
                 component={Screen.Order}

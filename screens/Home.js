@@ -10,13 +10,18 @@ import {
     Animated,
     StyleSheet,
     TouchableHighlight,
-    TouchableWithoutFeedback
+    TouchableWithoutFeedback,
+    LogBox
 } from 'react-native';
 import ImageSlider from 'react-native-image-slider';
 import{COLORS,SIZES,FONTS,icons,images, dummyData} from '../constants'
 import {TopGain} from "../components";
 
 const Home = () => {
+
+    React.useEffect(()=>{
+        LogBox.ignoreLogs(['VirtualizedLists should never be nested'])
+    },[]);
 
     const [transactionHistory,setTransactionHistory]=React.useState(dummyData.transactionHistory)
 
