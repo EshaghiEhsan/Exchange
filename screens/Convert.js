@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-    StyleSheet, Text, TouchableOpacity, View, Platform 
+    StyleSheet, Text, TouchableOpacity, View, Image 
 } from 'react-native';
 import {DropdownSearchable} from "../components";
 import{COLORS,SIZES,FONTS,icons,images, dummyData} from '../constants'
@@ -16,11 +16,38 @@ const Convert = () => {
     }
 	
     return (
-        <View style={{
-            flex:1,
+        <View style={styles.container}>
+            <View style={{
+               
+            }}>
+                {renderDropdownSearchable()}
+                <View style={{
+                    justifyContent:"center",
+                    alignItems:"center",
+                    marginVertical:60
+                }}>
+                     <TouchableOpacity style={{
+                        width:50,
+                        height:50,
+                        borderRadius:30,
+                        backgroundColor:COLORS.gray,
+                        alignItems:"center",
+                        justifyContent:"center"
+                        }}>
+                        <Image 
+                            source={icons.right_arrow}
+                            resizeMode='cover'
+                            style={{
+                                width:25,
+                                height:25,
+                            }}/>
+                        </TouchableOpacity>
+                </View>
 
-        }}>
-            {renderDropdownSearchable()}
+                {renderDropdownSearchable()}
+               
+            </View>
+            
 
         </View>
     )
@@ -28,7 +55,8 @@ const Convert = () => {
 
 const styles = StyleSheet.create({
     container: {
-      flex: 1,
+        justifyContent: "center",
+        flex: 1,
     },
    
   });
